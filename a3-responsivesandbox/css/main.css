@@ -1,0 +1,371 @@
+@charset "UTF-8";
+
+/*--------------------------------------------------------------
+    TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 - Settings: used with preprocessors and contain font, colors definitions, etc.
+2.0 - Tools: globally used mixins and functions. Use for preprocessor only.
+3.0 - Generic: reset and/or normalize styles, box-sizing definition, etc. 
+4.0 - Elements: styling for bare/generic HTML elements 
+        - Typography: Typography, Links, Address
+5.0 - Objects: class-based selectors which define undecorated design patterns, building blocks
+        - Framework
+6.0 - Components: specific designed components
+        - Nav
+        - Hero 
+        - Backgrounds & Spacing
+        - Footer 
+7.0 - Utilities: utilities and helper classes with ability to override anything which goes before in the triangle, eg. hide helper class
+        - Screen Reader
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+    3.0 - GENERIC
+-------------------------------------------------------------- */
+/* for some time, universal and html or body selector are all that will appear under here  */ 
+
+
+/* ----- UNIVERSAL ----- */
+
+* {
+    -o-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
+
+
+/*--------------------------------------------------------------
+    4.0 - ELEMENTS
+    - single (not contextual) element selectors only. No classes. No IDs. No contextual selectors. 
+-------------------------------------------------------------- */
+/* shared styles across elements are grouped at the top, not under an individual elements. Reduces repeated styles */ 
+
+li {
+    list-style-type: none;
+}
+
+/* ----- TYPOGRAPHY ----- */
+
+p {
+    margin: 0 auto;
+    padding: 0;
+}
+
+.font_black {
+    font-weight: 900;
+}
+
+.font_bold {
+    font-weight: 700;
+}
+
+.font_magenta {
+    color: #D42C59;
+}
+
+.font_peach {
+    color: #FFDDD2;
+}
+
+.font_white {
+    color: #FFFFFF;
+}
+
+.font_grey {
+    color: #394053;
+}
+
+.font_size1 {
+    font-size: 3.75rem;
+    line-height: 75px;
+    width: 688px;
+}
+
+.font_size2 {
+    font-size: 3rem;
+}
+
+.font_size3 {
+    font-size: 2.6rem;
+    width: 500px;
+    margin: auto 0;
+    padding: 0;
+}
+
+.font_size4 {
+    font-size: 1.7rem;
+    line-height: 36px;
+    width: 688px;
+}
+
+.font_size5 {
+    font-size: 1.1rem;
+}
+
+.letterspacing {
+    letter-spacing: 5px;
+}
+
+/* ----- LINKS ----- */
+
+
+/* ----- ADDRESS ----- */
+
+a {
+    color: #000000;
+    text-decoration: none;
+}
+
+a:hover {
+    opacity: .7;
+}
+
+
+/*--------------------------------------------------------------
+    5.0 - OBJECTS
+-------------------------------------------------------------- */
+/* for some time, only .wrapper and .row are likely to appear under this category */ 
+
+/* ----- FRAMEWORK ----- */
+
+.wrapper {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.grid {
+    display: grid;
+    gap: 20px;
+}
+
+.row {
+    display: flex;
+    gap: 20px;
+}
+
+/*--------------------------------------------------------------
+    6.0 - COMPONENTS
+-------------------------------------------------------------- */
+/* shared styles across components are grouped at the top, not under an individual component. Reduces repeated styles */ 
+
+
+
+/* hero / footer / nav -- are considered components because they'd repeat on across pages on a multi page site. be careful to not get them in the habit of styling based on the 'content' that appears on the page but rather what components make those up */ 
+
+
+/* ----- NAV ----- */
+
+.nav-container {
+    justify-content:space-between;
+    align-items: center;
+    margin: 40px auto;
+}
+
+.ul-container {
+    justify-content: end;
+    align-items: center;
+    gap: 40px;
+}
+
+
+/* ----- HERO ----- */
+
+.hero {
+    text-align: center;
+    margin: 25px 0 100px 0;
+}
+
+header .bg_peach {
+    padding: 70px 230px;
+}
+
+.hero > p {
+    margin-bottom: 45px;
+}
+
+/* ----- About ----- */
+.about-section > .grid {
+    grid: auto/ 350px 1fr;
+}
+
+.myfoodie_img {
+    max-width: 350px;
+    grid-area: 1/ 1/ 4/ 2;
+    align-self: center;
+    justify-self: center;
+}
+
+.grid > .gummi-bears {
+    align-self: end;
+    justify-self: end;
+}
+
+.chocolate-btn {
+    width: 288px;
+    height: 45px;
+    padding: 10px 45px;
+    text-align: center;
+}
+
+/* ----- BACKGROUNDS AND SPACING ----- */
+
+.bg_peach {
+    background: #FFDDD2;
+}
+
+.bg_peach2 {
+    border: 16px solid #FFDDD2;
+    color: #FFFFFF;
+    padding: 30px 40px;
+}
+
+.bg_magenta {
+    background: #D42C59;
+}
+
+.bg_gold {
+    background: #F2B100;
+}
+
+/* ----- SHAPES ----- */
+
+.shape_circle {
+    border-radius: 100px;
+    height: 62px;
+    width: 62px;
+}
+
+.shape_square {
+    height: 62px;
+    width: 62px;
+}
+
+.shape_rectangle {
+    height: 45px;
+    width: 335px;
+    border: 4px solid #FFDDD2;
+    background-color: rgb(255 255 255 / .5);
+    color: #fff;
+}
+
+.shape-container {
+    grid: auto / repeat(13, auto);
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding: 75px 0;
+    grid-gap: 28px;
+}
+
+.row-one {
+    max-width: 1160px;
+    grid-area: 1/ 1/ 14/ 3;
+}
+
+/* ----- FOOTER ----- */
+
+footer {
+    border-bottom: 16px solid #F2B100;
+    padding: 75px 0;
+}
+
+.footer-container {
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.footer-container2 {
+    justify-content: start;
+    align-items: center;
+}
+
+.circle-container {
+    justify-content: start;
+    align-items: center;
+    gap: 24px;
+    margin: 20px auto;
+}
+
+.rectangle-container {
+    grid-template-rows: repeat(3, 35px);
+    grid-template-rows: repeat(3, 35px);
+    justify-content: right;
+    align-items: end;
+}
+
+.rectangle-item1 {
+    justify-self: center;
+    align-self: center;
+}
+
+.rectangle-item2 {
+    justify-self: center;
+    align-self: center;
+}
+
+.rectangle-item3 {
+    justify-self: center;
+    align-self: center;
+}
+
+.candycane-btn {
+    width: 334px;
+    height: 45px;
+    padding: 10px 45px;
+    text-align: center;
+}
+
+/*--------------------------------------------------------------
+    7.0 - UTILITY
+-------------------------------------------------------------- */
+/* only classes that could be used on 'any' element should go here  */ 
+
+.sr-only {
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+}
+
+/*--------------------------------------------------------------
+    9.0 - Media Queries
+-------------------------------------------------------------- */
+
+/*laptop*/
+@media only screen and (max-width: 1100px) {
+    .hero {
+        flex-wrap: wrap;
+    }
+}
+
+/*tablet*/
+@media only screen and (max-width: 768px) {
+    .wrapper {
+    padding: 0 30px;
+    }
+
+    .hero {
+        flex-direction: column;
+    }
+}
+
+/*mobile*/
+@media only screen and (max-width: 480px) {
+    .wrapper {
+        padding: 0 20px;
+        }
+
+}

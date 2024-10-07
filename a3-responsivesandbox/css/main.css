@@ -87,7 +87,9 @@ p {
 .font_size1 {
     font-size: 3.75rem;
     line-height: 75px;
-    width: 688px;
+    max-width: 690px;
+    margin: 0 auto;
+
 }
 
 .font_size2 {
@@ -96,15 +98,16 @@ p {
 
 .font_size3 {
     font-size: 2.6rem;
-    width: 500px;
-    margin: auto 0;
+    max-width: 500px;
+    margin: 0 auto;
     padding: 0;
 }
 
 .font_size4 {
     font-size: 1.7rem;
     line-height: 36px;
-    width: 688px;
+    max-width: 690px;
+    margin: 0 auto;
 }
 
 .font_size5 {
@@ -186,7 +189,7 @@ a:hover {
 }
 
 header .bg_peach {
-    padding: 70px 230px;
+    padding: 70px 40px;
 }
 
 .hero > p {
@@ -211,7 +214,7 @@ header .bg_peach {
 }
 
 .chocolate-btn {
-    width: 288px;
+    max-width: 290px;
     height: 45px;
     padding: 10px 45px;
     text-align: center;
@@ -315,12 +318,11 @@ footer {
 }
 
 .rectangle-item3 {
-    justify-self: center;
     align-self: center;
 }
 
 .candycane-btn {
-    width: 334px;
+    max-width: 334px;
     height: 45px;
     padding: 10px 45px;
     text-align: center;
@@ -346,20 +348,12 @@ footer {
 
 /*laptop*/
 @media only screen and (max-width: 1100px) {
-    .hero {
-        flex-wrap: wrap;
-    }
+
 }
 
 /*tablet*/
 @media only screen and (max-width: 768px) {
-    .wrapper {
-    padding: 0 30px;
-    }
 
-    .hero {
-        flex-direction: column;
-    }
 }
 
 /*mobile*/
@@ -367,5 +361,25 @@ footer {
     .wrapper {
         padding: 0 20px;
         }
+    
+    .nav-container {
+        flex-direction: column;
+    }
 
+    .ul-container {
+        background: #F2B100;
+        
+    }
+
+    .shape-container {
+        flex-wrap: wrap;
+    }
+
+    .footer-container .row {
+        flex-wrap: wrap;
+    }
+
+    .rectangle-container {
+        flex-direction: column;
+    }
 }

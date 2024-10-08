@@ -53,6 +53,10 @@ li {
     list-style-type: none;
 }
 
+element {
+    flex-wrap: wrap;
+}
+
 /* ----- TYPOGRAPHY ----- */
 
 p {
@@ -98,7 +102,6 @@ p {
 
 .font_size3 {
     font-size: 2.6rem;
-    max-width: 500px;
     margin: 0 auto;
     padding: 0;
 }
@@ -143,7 +146,6 @@ a:hover {
 .wrapper {
     max-width: 1160px;
     margin: 0 auto;
-    padding: 0 40px;
 }
 
 .grid {
@@ -193,6 +195,7 @@ header .bg_peach {
 }
 
 .hero > p {
+    margin-top: 20px;
     margin-bottom: 45px;
 }
 
@@ -266,8 +269,9 @@ header .bg_peach {
     align-items: center;
     justify-content: center;
     margin: auto;
-    padding: 75px 0;
+    padding: 70px 0;
     grid-gap: 28px;
+    grid-template-columns: repeat(auto-fill, minmax (62px));
 }
 
 .row-one {
@@ -347,39 +351,80 @@ footer {
 -------------------------------------------------------------- */
 
 /*laptop*/
-@media only screen and (max-width: 1100px) {
-
+@media only screen and (max-width: 1160px) {
+    .about-section {
+        padding: 30px;
+        margin: 0 30px;
+    }
 }
 
 /*tablet*/
 @media only screen and (max-width: 768px) {
-
-}
-
-/*mobile*/
-@media only screen and (max-width: 480px) {
-    .wrapper {
-        padding: 0 20px;
-        }
-    
     .nav-container {
         flex-direction: column;
     }
 
     .ul-container {
         background: #F2B100;
-        
+        padding: 20px;
+    }
+
+    .font_size1 {
+        font-size: 2.5rem;
+        line-height: 55px;
+    }
+    
+    .font_size3 {
+        font-size: 2rem;
+        line-height: 44px;
+    }
+
+    .font_size4 {
+        font-size: 1.25rem;
+        line-height: 32px;
+    }
+
+    .about-section > .grid {
+        grid: auto/ 1fr;
+        justify-items: start;
+        justify-content: start;
+    }
+
+    .about-section {
+        padding: 40px;
+        margin: 0 40px;
+    }
+
+    .grid > .gummi-bears {
+        align-self: left;
+        justify-self: left;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+}
+
+/*mobile*/
+@media only screen and (max-width: 480px) {
+    .nav-container {
+        flex-direction: column;
+    }
+
+    .about-section {
+        padding: 20px;
+        margin: 0 20px;
     }
 
     .shape-container {
-        flex-wrap: wrap;
+        padding: 50px;
     }
 
-    .footer-container .row {
-        flex-wrap: wrap;
+    .grid > .gummi-bears {
+        align-self: left;
+        justify-self: left;
     }
 
-    .rectangle-container {
-        flex-direction: column;
-    }
 }
